@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deano's Aminos!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link href="study.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h2>Deano's <span style="color: lightgreen">Aminos!</span></h2>
+    </header>
+
+    <div class="container">
+      <div id="main" class="nes-container">
+        <div id="mrow">
+          <div class="nes-pointer" id="card"></div>
+        </div>
+        <div id="brow">
+          <button type="button" class="nes-btn" id="previous"><b>&lt---</b></button>
+          <button type="button" class="nes-btn" id="next"><b>---&gt</b></button>
+        </div>
+        <div id="number"></div>
+      </div>
+      
+      <div id="status">
+        <button type="button" class="nes-btn" onclick="location.href='home.html';">Home</button>
+        <button type="button" class="nes-btn" id="shuffle">Shuffle</button>
+      </div>
+    </div>
+
+    <script src="study.js"></script>
+  </body>
+</html>

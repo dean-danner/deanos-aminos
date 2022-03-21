@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deano's Aminos!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link href="quiz.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h2>Deano's <span style="color: lightgreen">Aminos!</span></h2>
+    </header>
+
+    <div class="container">
+      <div id="question" class="nes-container is-rounded"></div>
+      <div id="namestr"></div>
+      <div id="answer" class="nes-container"></div>
+      <div id="status">
+        <div id="time"></div>
+        <div id="status-display">
+          <button type="button" class="nes-btn" onclick="location.href='home.html';">Home</button>
+          <span id='points'></span>
+        </div>
+      </div>
+
+      <div id="end" class="off">
+        <p class="title">Game Over</p>
+        <u><p style="font-size: 20px;" id="msg">Good work!</p></u>
+        <ul class="nes-list is-disc">
+          <li id="endtime"></li>
+          <li id="endpoints"></li>
+          <li id="endgrade"></li>
+        </ul>
+        <div class="nes-balloon from-right endtext">
+          <p>
+            Not happy with your grade?<br>Try:
+            <button type="button" class="nes-btn endstudybtn" onclick="location.href='study.html';">Study Mode</button>
+          <p>
+        </div>
+        <button type="button" class="nes-btn endhomebtn" onclick="location.href='home.html';">Home</button>
+      </div>
+    </div>
+
+    <script src="quiz.js"></script>
+  </body>
+</html>
