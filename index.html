@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deano's Aminos!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <link href="home.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Deano's <span style="color: lightgreen">Aminos!</span></h1>
+    </header>
+
+    <div class="container">
+      <div class="nes-container with-title ">
+        <p class="title">Modes</p>
+        <div class="mode-buttons">
+          <div class="button-with-help">
+            <button type="button" class="nes-btn" onclick="redirect('quiz')">Quiz Mode</button>
+            <section>
+              <button type="button" class="nes-btn is-primary" onclick="document.getElementById('quiz').showModal();">
+                ?
+              </button>
+              <dialog class="nes-dialog" id="quiz">
+                <form method="dialog">
+                  <p class="title">Quiz Mode: Help</p>
+                  <p>
+                    You have 60 seconds to match an amino acid identifier to its corresponding 
+                    identifier. You are awarded points based off how fast you are able to answer 
+                    the question correctly for up to 5 points per question. There are 20 questions.
+                  </p>
+                  <menu class="dialog-menu">
+                    <button class="nes-btn is-primary diagbtn">Done</button>
+                  </menu>
+                </form>
+              </dialog>
+            </section>
+          </div>
+
+          <div class="button-with-help">
+            <button type="button" class="nes-btn" onclick="redirect('study')">Study Mode</button>
+            <section>
+              <button type="button" class="nes-btn is-primary" onclick="document.getElementById('study').showModal();">
+                ?
+              </button>
+              <dialog class="nes-dialog" id="study">
+                <form method="dialog">
+                  <p class="title">Study Mode: Help</p>
+                  <p>
+                    A flashcard with an amino acid structure is displayed. You can click the 
+                    flashcard to show its corresponding name and info. There are 20 flashcards 
+                    and the order is randomized.
+                  </p>
+                  <menu class="dialog-menu">
+                    <button class="nes-btn is-primary diagbtn">Done</button>
+                  </menu>
+                </form>
+              </dialog>
+            </section>
+          </div>
+        </div>
+
+        <div class="nes-container with-title is-centered" id="inside">
+          <p class="title">Quiz Settings</p>
+          <div class="setting-options">
+            <label>
+              <input type="radio" class="nes-radio" name="answer" value="0" checked />
+              <span>Struct</span>
+            </label>
+            <label>
+              <input type="radio" class="nes-radio" name="answer" value="1" />
+              <span>Name</span>
+            </label>
+            <label>
+              <input type="radio" class="nes-radio" name="answer" value="2" />
+              <span>Code</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="nes-text is-disabled credit-text">
+        <p>
+          This application was created by Dean Danner at the request of Dr. Lombardi 
+          for use by MSMU chemistry students.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function redirect(page) {
+        sessionStorage.setItem("mode", document.querySelector('input[name="answer"]:checked').value);
+        location.href = page + ".html";
+      }
+    </script>
+  </body>
+</html>
